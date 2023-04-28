@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ contractNamespace }};
+
+class {{ class }} implements {{ contract }}
+{
+    /**
+     * Execute the action.
+     */
+    public function {{ method }}()
+    {
+        //
+    }
+}

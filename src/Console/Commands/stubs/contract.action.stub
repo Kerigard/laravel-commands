@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+interface {{ class }}
+{
+    /**
+     * Execute the action.
+     */
+    public function {{ method }}();
+}
