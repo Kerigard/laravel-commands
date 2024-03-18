@@ -1,6 +1,6 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Console\Commands;
+namespace Kerigard\LaravelCommands\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Process;
@@ -63,7 +63,7 @@ class PintCommand extends Command
             $args[] = $this->option('config');
         }
 
-        $command = [config('utils.console_commands.pint.path', './vendor/bin/pint'), ...$args];
+        $command = [config('commands.console_commands.pint.path', './vendor/bin/pint'), ...$args];
         Process::run($command, function (string $type, string $output) {
             if (BaseProcess::ERR === $type) {
                 $this->error($output);

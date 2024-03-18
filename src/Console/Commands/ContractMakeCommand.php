@@ -1,6 +1,6 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Console\Commands;
+namespace Kerigard\LaravelCommands\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -39,7 +39,7 @@ class ContractMakeCommand extends GeneratorCommand
     {
         return str_replace(
             '{{ method }}',
-            config('utils.console_commands.make_action.method', 'handle'),
+            config('commands.console_commands.make_action.method', 'handle'),
             parent::buildClass($name)
         );
     }

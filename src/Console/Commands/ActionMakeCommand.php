@@ -1,6 +1,6 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Console\Commands;
+namespace Kerigard\LaravelCommands\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
@@ -56,7 +56,7 @@ class ActionMakeCommand extends GeneratorCommand
     {
         $stub = str_replace(
             '{{ method }}',
-            config('utils.console_commands.make_action.method', 'handle'),
+            config('commands.console_commands.make_action.method', 'handle'),
             parent::buildClass($name)
         );
 

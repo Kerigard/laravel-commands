@@ -1,9 +1,9 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Tests\Console;
+namespace Kerigard\LaravelCommands\Tests\Console;
 
 use Illuminate\Support\Facades\File;
-use Kerigard\LaravelUtils\Tests\TestCase;
+use Kerigard\LaravelCommands\Tests\TestCase;
 use Symfony\Component\Console\Exception\CommandNotFoundException;
 
 class ContractMakeTest extends TestCase
@@ -14,9 +14,9 @@ class ContractMakeTest extends TestCase
     public function getEnvironmentSetUp($app): void
     {
         if ($this->name() == 'test_contract_creation_disabled') {
-            $app->config->set('utils.console_commands.make_contract.enabled', false);
+            $app->config->set('commands.console_commands.make_contract.enabled', false);
         } elseif ($this->name() == 'test_action_contract_with_another_method_created') {
-            $app->config->set('utils.console_commands.make_action.method', 'execute');
+            $app->config->set('commands.console_commands.make_action.method', 'execute');
         }
     }
 

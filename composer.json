@@ -1,6 +1,6 @@
 {
-    "name": "kerigard/laravel-utils",
-    "description": "Utils for Laravel",
+    "name": "kerigard/laravel-commands",
+    "description": "Commands for Laravel",
     "license": "MIT",
     "authors": [
         {
@@ -8,7 +8,7 @@
             "email": "kerihoros@gmail.com"
         }
     ],
-    "homepage": "https://github.com/kerigard/laravel-utils",
+    "homepage": "https://github.com/kerigard/laravel-commands",
     "keywords": [
         "laravel"
     ],
@@ -22,18 +22,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Kerigard\\LaravelUtils\\": "src/"
+            "Kerigard\\LaravelCommands\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kerigard\\LaravelUtils\\Tests\\": "tests/"
+            "Kerigard\\LaravelCommands\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Kerigard\\LaravelUtils\\UtilsServiceProvider"
+                "Kerigard\\LaravelCommands\\CommandsServiceProvider"
             ]
         }
     },

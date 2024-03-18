@@ -1,6 +1,6 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Console\Commands;
+namespace Kerigard\LaravelCommands\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Attribute\AsCommand;

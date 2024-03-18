@@ -1,10 +1,10 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Tests\Console;
+namespace Kerigard\LaravelCommands\Tests\Console;
 
 use Illuminate\Process\PendingProcess;
 use Illuminate\Support\Facades\Process;
-use Kerigard\LaravelUtils\Tests\TestCase;
+use Kerigard\LaravelCommands\Tests\TestCase;
 use Symfony\Component\Console\Exception\CommandNotFoundException;
 
 class PintTest extends TestCase
@@ -15,7 +15,7 @@ class PintTest extends TestCase
     public function getEnvironmentSetUp($app): void
     {
         if ($this->name() == 'test_pint_starting_disabled') {
-            $app->config->set('utils.console_commands.pint.enabled', false);
+            $app->config->set('commands.console_commands.pint.enabled', false);
         }
     }
 
@@ -26,7 +26,7 @@ class PintTest extends TestCase
         $this->artisan('pint')->assertSuccessful();
 
         Process::assertRan(function (PendingProcess $process) {
-            return $process->command[0] == config('utils.console_commands.pint.path', './vendor/bin/pint');
+            return $process->command[0] == config('commands.console_commands.pint.path', './vendor/bin/pint');
         });
     }
 
@@ -50,7 +50,7 @@ class PintTest extends TestCase
         ])->assertSuccessful();
 
         Process::assertRan(function (PendingProcess $process) {
-            return $process->command[0] == config('utils.console_commands.pint.path', './vendor/bin/pint') &&
+            return $process->command[0] == config('commands.console_commands.pint.path', './vendor/bin/pint') &&
                 $process->command[1] == 'app/Models' &&
                 $process->command[2] == 'routes/api.php' &&
                 $process->command[3] == '-v' &&
@@ -72,7 +72,7 @@ class PintTest extends TestCase
             ->assertSuccessful();
 
         Process::assertRan(function (PendingProcess $process) {
-            return $process->command[0] == config('utils.console_commands.pint.path', './vendor/bin/pint') &&
+            return $process->command[0] == config('commands.console_commands.pint.path', './vendor/bin/pint') &&
                 $process->command[1] == 'app/Models' &&
                 $process->command[2] == 'routes/api.php' &&
                 $process->command[3] == '-v' &&

@@ -1,8 +1,8 @@
 <?php
 
-namespace Kerigard\LaravelUtils\Tests;
+namespace Kerigard\LaravelCommands\Tests;
 
-use Kerigard\LaravelUtils\UtilsServiceProvider;
+use Kerigard\LaravelCommands\CommandsServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -12,6 +12,6 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getPackageProviders($app): array
     {
-        return [UtilsServiceProvider::class];
+        return [CommandsServiceProvider::class];
     }
 }

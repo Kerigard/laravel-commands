@@ -1,23 +1,23 @@
 <?php
 
-namespace Kerigard\LaravelUtils;
+namespace Kerigard\LaravelCommands;
 
 use Illuminate\Support\ServiceProvider;
-use Kerigard\LaravelUtils\Console\Commands\ActionMakeCommand;
-use Kerigard\LaravelUtils\Console\Commands\ContractMakeCommand;
-use Kerigard\LaravelUtils\Console\Commands\EnumMakeCommand;
-use Kerigard\LaravelUtils\Console\Commands\PintCommand;
-use Kerigard\LaravelUtils\Console\Commands\ServiceMakeCommand;
-use Kerigard\LaravelUtils\Console\Commands\TraitMakeCommand;
+use Kerigard\LaravelCommands\Console\Commands\ActionMakeCommand;
+use Kerigard\LaravelCommands\Console\Commands\ContractMakeCommand;
+use Kerigard\LaravelCommands\Console\Commands\EnumMakeCommand;
+use Kerigard\LaravelCommands\Console\Commands\PintCommand;
+use Kerigard\LaravelCommands\Console\Commands\ServiceMakeCommand;
+use Kerigard\LaravelCommands\Console\Commands\TraitMakeCommand;
 
-class UtilsServiceProvider extends ServiceProvider
+class CommandsServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/utils.php', 'utils');
+        $this->mergeConfigFrom(__DIR__.'/../config/commands.php', 'commands');
     }
 
     /**
@@ -37,12 +37,12 @@ class UtilsServiceProvider extends ServiceProvider
     private function publishFiles(): void
     {
         $this->publishes([
-            __DIR__.'/../config/utils.php' => config_path('utils.php'),
-        ], 'utils-config');
+            __DIR__.'/../config/commands.php' => config_path('commands.php'),
+        ], 'commands-config');
 
         $this->publishes([
             __DIR__.'/Console/Commands/stubs' => base_path('stubs'),
-        ], 'utils-stubs');
+        ], 'commands-stubs');
     }
 
     /**
@@ -52,22 +52,22 @@ class UtilsServiceProvider extends ServiceProvider
     {
         $commands = [];
 
-        if (config('utils.console_commands.pint.enabled')) {
+        if (config('commands.console_commands.pint.enabled')) {
             $commands[] = PintCommand::class;
         }
-        if (config('utils.console_commands.make_enum.enabled')) {
+        if (config('commands.console_commands.make_enum.enabled')) {
             $commands[] = EnumMakeCommand::class;
         }
-        if (config('utils.console_commands.make_trait.enabled')) {
+        if (config('commands.console_commands.make_trait.enabled')) {
             $commands[] = TraitMakeCommand::class;
         }
-        if (config('utils.console_commands.make_contract.enabled')) {
+        if (config('commands.console_commands.make_contract.enabled')) {
             $commands[] = ContractMakeCommand::class;
         }
-        if (config('utils.console_commands.make_action.enabled')) {
+        if (config('commands.console_commands.make_action.enabled')) {
             $commands[] = ActionMakeCommand::class;
         }
-        if (config('utils.console_commands.make_service.enabled')) {
+        if (config('commands.console_commands.make_service.enabled')) {
             $commands[] = ServiceMakeCommand::class;
         }
 

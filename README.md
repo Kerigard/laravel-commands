@@ -1,32 +1,32 @@
-# Laravel Utils
+# Laravel Commands
 
 <p align="center">
-  <a href="https://github.com/Kerigard/laravel-utils/actions"><img src="https://github.com/Kerigard/laravel-utils/workflows/tests/badge.svg" alt="Build Status"></a>
-  <a href="https://packagist.org/packages/Kerigard/laravel-utils"><img src="https://img.shields.io/packagist/dt/Kerigard/laravel-utils" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/Kerigard/laravel-utils"><img src="https://img.shields.io/packagist/v/Kerigard/laravel-utils" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/Kerigard/laravel-utils"><img src="https://img.shields.io/packagist/l/Kerigard/laravel-utils" alt="License"></a>
+  <a href="https://github.com/Kerigard/laravel-commands/actions"><img src="https://github.com/Kerigard/laravel-commands/workflows/tests/badge.svg" alt="Build Status"></a>
+  <a href="https://packagist.org/packages/Kerigard/laravel-commands"><img src="https://img.shields.io/packagist/dt/Kerigard/laravel-commands" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/Kerigard/laravel-commands"><img src="https://img.shields.io/packagist/v/Kerigard/laravel-commands" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/Kerigard/laravel-commands"><img src="https://img.shields.io/packagist/l/Kerigard/laravel-commands" alt="License"></a>
 </p>
 
-Utils for Laravel 10 and up.
+Commands for Laravel 10 and up.
 
 ## Installation
 
 Install package via composer:
 
 ``` bash
-composer require kerigard/laravel-utils
+composer require kerigard/laravel-commands
 ```
 
 Publish the configuration file using the `vendor:publish` artisan command to configure or disable unnecessary commands:
 
 ```bash
-php artisan vendor:publish --provider="Kerigard\LaravelUtils\UtilsServiceProvider" --tag=utils-config
+php artisan vendor:publish --provider="Kerigard\LaravelCommands\CommandsServiceProvider" --tag=commands-config
 ```
 
 Publish the stubs files using the `vendor:publish` artisan command to change the structure of generated classes:
 
 ```bash
-php artisan vendor:publish --provider="Kerigard\LaravelUtils\UtilsServiceProvider" --tag=utils-stubs
+php artisan vendor:publish --provider="Kerigard\LaravelCommands\CommandsServiceProvider" --tag=commands-stubs
 ```
 
 ## Usage
